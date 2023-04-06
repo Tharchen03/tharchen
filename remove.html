@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Employee Management System</title>
+	<meta charset="UTF-8">
+    <link rel="stylesheet" type="text/css" href="main.css">
+</head>
+
+<body>
+	<h1>Employee Management System</h1>
+
+    <center>
+
+        <button type="button"  onclick="location.href='add.html'">Add Employee</button>
+        <button type="button" onclick="location.href='remove.html'"> Remove Employee</button>
+        <button type="button"  onclick="location.href='update.html'"> Update Employee</button>
+        
+    </center>
+    
+
+	<!-- Remove Employee -->
+	<h2>Remove Employee</h2>
+	<form id="remove_employee">
+		<label for="remove_emp_id">Employee ID to be removed:</label>
+		<input type="text" id="remove_emp_id" name="remove_emp_id"><br><br>
+
+		<input type="submit" value="Remove Employee">
+	</form>
+	<br><hr><br>
+
+
+	<!-- Employee Table -->
+	<h2>Employee List</h2>
+	<table id="employeeTable">
+		<tr>
+			<th>Employee Name</th>
+			<th>Employee ID</th>
+			<th>Date</th>
+		</tr>
+	</table>
+
+</body>
+</html>
+
