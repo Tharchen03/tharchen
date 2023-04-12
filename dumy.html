@@ -1,23 +1,21 @@
-<!DOCTYPE html>
 <html>
 <head>
     <title>Employee Management System</title>
     <meta charset="UTF-8">
     <link rel="stylesheet" type="text/css" href="main.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
-
+    <!-- Add Bootstrap CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
     <!-- <script src="main.js"></script> -->
 </head>
 
 <body>
-	<h1>Employee Management System</h1>
+    <h1>Employee Management System</h1>
     <center>
-
-        <button type="button"  onclick="location.href='add.html'">Add Employee</button>
-        <button type="button" onclick="location.href='remove.html'"> Remove Employee</button>
-        <button type="button"  onclick="location.href='update.html'"> Update Employee</button>
-		<button type="button"  onclick="location.href='test.html'"> test</button>
-        
+        <button type="button" onclick="location.href='add.html'" class="btn btn-primary">Add Employee</button>
+        <button type="button" onclick="location.href='remove.html'" class="btn btn-danger"> Remove Employee</button>
+        <button type="button" onclick="location.href='update.html'" class="btn btn-info"> Update Employee</button>
+        <button type="button" onclick="location.href='test.html'" class="btn btn-secondary"> test</button>
     </center>
 
     <!-- Add Employee -->
@@ -32,13 +30,13 @@
         <label for="emp_date">Date:</label>
         <input type="date" id="emp_date" name="emp_date"><br><br>
 
-        <button type="button" onclick="add()">Add Employee</button>
+        <button type="button" onclick="add()" class="btn btn-success">Add Employee</button>
     </form>
     <br><hr><br>
 
     <!-- Employee Table -->
     <h2>Employee List</h2>
-    <table id="employeeTable">
+    <table id="employeeTable" class="table">
         <tr>
             <th>Employee ID</th>
             <th>Employee Name</th>
@@ -71,31 +69,9 @@
             editBtn.className = 'btn btn-info btn-sm';
             editBtn.innerHTML = '<i class="fas fa-edit" color="white"></i>';
             editBtn.addEventListener('click', function() {
-
-                 let empIdToUpdate = empid;
-                 let empNameToUpdate = empname;
-                 let empDateToUpdate = empdate;
-
-    // Show a prompt to update employee name
-        let updatedEmpName = prompt('Enter updated Employee Name:', empNameToUpdate);
-       if (updatedEmpName !== null && updatedEmpName !== '') {
-          empNameToUpdate = updatedEmpName;
-          cell2.innerHTML = empNameToUpdate;
-       }
-
-    // Show a prompt to update employee date
-     let updatedEmpDate = prompt('Enter updated Date:', empDateToUpdate);
-      if (updatedEmpDate !== null && updatedEmpDate !== '') {
-            empDateToUpdate = updatedEmpDate;
-          cell3.innerHTML = empDateToUpdate;
-    }
-
-    // Update the localStorage with the updated employee data
-     localStorage.setItem('empname', empNameToUpdate);
-    localStorage.setItem('empdate', empDateToUpdate);
-
-    console.log('Edit button clicked for employee ID: ' + empIdToUpdate);
-});
+               
+                console.log('Edit button clicked for employee ID: ' + empid);
+            });
             cell4.appendChild(editBtn);
 
      
@@ -139,6 +115,7 @@ function generateEmployeeId() {
             if (highestEmpId === null || highestEmpId === undefined) {
                 highestEmpId = 0;
             }
+
             // Increment the highestEmpId by 1
             highestEmpId = parseInt(highestEmpId) + 1;
 

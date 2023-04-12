@@ -21,3 +21,4 @@ function addEmployee() {
 
 // Call the addEmployee function to add a new employee
 addEmployee();
+

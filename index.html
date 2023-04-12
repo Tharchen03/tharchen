@@ -4,7 +4,7 @@
 	<title>Employee Management System</title>
 	<meta charset="UTF-8">
     <link rel="stylesheet" type="text/css" href="main.css">
-    <link rel="stylesheet" type="text/css" href="main.css">
+    <script src="main.js"></script>
 </head>
 
 <body>
@@ -14,6 +14,7 @@
         <button type="button"  onclick="location.href='add.html'">Add Employee</button>
         <button type="button" onclick="location.href='remove.html'"> Remove Employee</button>
         <button type="button"  onclick="location.href='update.html'"> Update Employee</button>
+		<button type="button"  onclick="location.href='test.html'"> test</button>
         
     </center>
     
@@ -23,13 +24,32 @@
 	<h2>Employee List</h2>
 	<table id="employeeTable">
 		<tr>
-			<th>Employee Name</th>
 			<th>Employee ID</th>
+			<th>Employee Name</th>
 			<th>Date</th>
+		</tr>
+		<tr>
+			<td id="id"></td>
+			<td id="name"></td>
+			<td id="date"></td>
 		</tr>
 	</table>
 
-
 </body>
+<script>
+	let empid = localStorage.getItem('empid');
+	document.getElementById('id').innerHTML = empid;
+
+	let empname = localStorage.getItem('empname');
+	document.getElementById('name').innerHTML = empname;
+
+	let empdate = localStorage.getItem('empdate');
+	document.getElementById('date').innerHTML = empdate;
+
+	// document.getElementById('id').innerHTML = storedata;
+	// document.getElementById('name').innerHTML = storedata;
+	// document.getElementById('date').innerHTML = storedata;
+
+</script>
 </html>
 
